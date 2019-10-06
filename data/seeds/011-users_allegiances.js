@@ -2,7 +2,7 @@ exports.seed = function(knex) {
   // Deletes ALL existing entries
 
   // Inserts seed entries
-  return knex("users_allegiances").insert([
+  return knex('users_allegiances').insert([
     { user_id: 1, allegiance_id: 1 },
     { user_id: 2, allegiance_id: 2 },
     { user_id: 3, allegiance_id: 3 },
@@ -27,6 +27,6 @@ exports.seed = function(knex) {
     { user_id: 2, allegiance_id: 7 },
     { user_id: 3, allegiance_id: 8 },
     { user_id: 1, allegiance_id: 6 },
-    { user_id: 3, allegiance_id: 9 }
-  ]);
-};
+    { user_id: 3, allegiance_id: 9 },
+  ])
+}

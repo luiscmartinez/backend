@@ -1,165 +1,165 @@
-const faker = require("faker");
+const faker = require('faker')
 
 exports.seed = function(knex) {
   // Deletes ALL existing entries
 
   // Creates unified created/updated at dates for groups
   function dates() {
-    date = faker.date.past();
-    return { created_at: date, updated_at: date };
+    date = faker.date.past()
+    return { created_at: date, updated_at: date }
   }
   // Inserts seed entries
 
-  return knex("groups_users").insert([
+  return knex('groups_users').insert([
     {
       user_id: 1,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 1,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 1,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 2,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 1,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 3,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 2,
-      user_type: "member",
+      user_type: 'member',
       group_id: 4,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 2,
-      user_type: "invited",
+      user_type: 'invited',
       group_id: 5,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 2,
-      user_type: "invited",
+      user_type: 'invited',
       group_id: 6,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 3,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 7,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 3,
-      user_type: "member",
+      user_type: 'member',
       group_id: 8,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 3,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 9,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 4,
-      user_type: "invited",
+      user_type: 'invited',
       group_id: 10,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 4,
-      user_type: "member",
+      user_type: 'member',
       group_id: 11,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 4,
-      user_type: "member",
+      user_type: 'member',
       group_id: 12,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 5,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 1,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 5,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 2,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 5,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 3,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 6,
-      user_type: "member",
+      user_type: 'member',
       group_id: 4,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 6,
-      user_type: "member",
+      user_type: 'member',
       group_id: 5,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 6,
-      user_type: "invited",
+      user_type: 'invited',
       group_id: 6,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 7,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 7,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 7,
-      user_type: "invited",
+      user_type: 'invited',
       group_id: 8,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 7,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 9,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 8,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 10,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 8,
-      user_type: "member",
+      user_type: 'member',
       group_id: 11,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 8,
-      user_type: "invited",
+      user_type: 'invited',
       group_id: 12,
-      ...dates()
+      ...dates(),
     },
     {
       user_id: 9,
-      user_type: "admin",
+      user_type: 'admin',
       group_id: 13,
-      ...dates()
-    }
-  ]);
-};
+      ...dates(),
+    },
+  ])
+}
