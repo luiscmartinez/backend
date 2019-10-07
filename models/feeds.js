@@ -23,7 +23,7 @@ function findPosts(filters) {
         'p.id',
         'u.id as user_id',
         'p.group_id',
-        'g.group_name',
+        'g.name',
         'g.acronym',
         'g.image as group_image',
         'p.post_content',
@@ -44,7 +44,7 @@ function findPosts(filters) {
         'p.id',
         'u.id as user_id',
         'p.group_id',
-        'g.group_name',
+        'g.name',
         'g.acronym',
         'g.image as group_image',
         'p.post_content',
@@ -73,7 +73,7 @@ function findReplies(filters) {
       .select(
         'r.id',
         'p.group_id',
-        'g.group_name',
+        'g.name',
         'g.acronym',
         'g.image as group_image',
         'u.id as user_id',
@@ -97,7 +97,7 @@ function findReplies(filters) {
       .select(
         'r.id',
         'p.group_id',
-        'g.group_name',
+        'g.name',
         'g.acronym',
         'g.image as group_image',
         'u.id as user_id',
@@ -133,7 +133,7 @@ function findPostLikes(filters) {
         .select(
           'p_l.id',
           'p.group_id',
-          'g.group_name',
+          'g.name',
           'g.acronym',
           'g.image as group_image',
           'p.post_content',
@@ -165,7 +165,7 @@ function findPostLikes(filters) {
         .select(
           'p_l.id',
           'p.group_id',
-          'g.group_name',
+          'g.name',
           'g.acronym',
           'g.image as group_image',
           'p.post_content',
@@ -206,7 +206,7 @@ function findReplyLikes(filters) {
         .select(
           'r_l.id',
           'p.group_id',
-          'g.group_name',
+          'g.name',
           'g.acronym',
           'g.image as group_image',
           'r.post_id',
@@ -241,7 +241,7 @@ function findReplyLikes(filters) {
         .select(
           'r_l.id',
           'p.group_id',
-          'g.group_name',
+          'g.name',
           'g.acronym',
           'g.image as group_image',
           'r.post_id',

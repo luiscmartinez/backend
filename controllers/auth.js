@@ -27,7 +27,7 @@ router.route('/').post(async (req, res) => {
       // If user is a member of groups, map group info to conform names to front end component structure
       basicGroupInfo = userGroups.map(group => {
         return {
-          name: group.group_name,
+          name: group.name,
           image: group.group_image,
           id: group.group_id,
           user_type: group.user_type,

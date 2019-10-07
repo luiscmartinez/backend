@@ -24,7 +24,7 @@ function find(filters) {
       .select(
         'g_a.id as id',
         'g.id as group_id',
-        'group_name',
+        'name',
         'a.id as allegiance_id',
         'a.allegiance_name as allegiance_name',
         'a.image as allegiance_image',
@@ -37,7 +37,7 @@ function find(filters) {
       .select(
         'g_a.id as id',
         'g.id as group_id',
-        'group_name',
+        'name',
         'a.id as allegiance_id',
         'a.allegiance_name as allegiance_name',
         'a.image as allegiance_image',

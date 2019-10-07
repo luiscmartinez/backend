@@ -31,8 +31,7 @@ function find(filters) {
         'banner_image',
         'bio',
         'first_name',
-        'last_name',
-        'notification_check'
+        'last_name'
       )
       .where(filters)
   }
@@ -45,8 +44,7 @@ function find(filters) {
     'banner_image',
     'bio',
     'first_name',
-    'last_name',
-    'notification_check'
+    'last_name'
   )
 }
 

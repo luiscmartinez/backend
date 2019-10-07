@@ -18,12 +18,10 @@ const userSchema = Joi.object().keys({
   image: Joi.string().allow(null),
   banner_image: Joi.string().allow(null),
   bio: Joi.string().allow(null),
-  // Use any for notification check as default date.timestamp does not work for ISO format
-  notification_check: Joi.any().allow(null),
 })
 
 const groupSchema = Joi.object().keys({
-  group_name: Joi.string().required(),
+  name: Joi.string().required(),
   privacy_setting: Joi.string()
     .required()
     .valid('public', 'private', 'hidden'),

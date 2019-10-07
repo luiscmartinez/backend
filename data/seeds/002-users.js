@@ -7,6 +7,7 @@ const createFakeUser = () => ({
   first_name: faker.name.firstName(),
   last_name: faker.name.lastName(),
   bio: faker.lorem.sentences(),
+  banner_image: faker.image(),
 })
 exports.seed = async function(knex, Promise) {
   // Deletes ALL existing entries
