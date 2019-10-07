@@ -1,9 +1,9 @@
+require('dotenv').config
 const express = require('express')
-
 const Users = require('../models/users')
 const GroupsUsers = require('../models/groups_users')
 const UsersAllegiances = require('../models/users_allegiances')
-
+const axios = require('axios')
 const router = express.Router()
 
 router.route('/').post(async (req, res) => {
@@ -48,9 +48,49 @@ router.route('/').post(async (req, res) => {
     const userInfo = { currentUser, basicGroupInfo, basicAllegianceInfo }
     return res.status(200).json({ userInfo })
   } else {
-    // Add user to database if email does not exist
-    const newUser = await Users.add(req.body)
+    const response = await axios.post(
+      `https://${process.env.AUTH0_DOMAIN}/oauth/token`,
+      {
+        client_id: process.env.AUTH0_CLIENT_ID,
+        client_secret: process.env.AUTH0_CLIENT_SECRET,
+        audience: process.env.AUTH0_SERVER + '/',
+        grant_type: 'client_credentials',
+      },
+      { headers: { 'content-type': 'application/json' } }
+    )
+
+    const userProfileResponse = await axios.get(
+      `${process.env.AUTH0_SERVER}/users-by-email?email=${req.body.email}`,
+      {
+        headers: {
+          'content-type': 'application/json',
+          authorization: `Bearer ${response.data.access_token}`,
+        },
+      }
+    )
+
+    const {
+      email,
+      family_name,
+      given_name,
+      nickname,
+      picture,
+      last_ip,
+      identities,
+    } = userProfileResponse.data[0]
+    const ipApiResponse = await axios.get(`http://ip-api.com/json/${last_ip}`)
+
+    const userData = {
+      username: nickname,
+      email,
+      location: ipApiResponse.data.zip || null,
+      image: picture,
+      first_name: given_name || null,
+      last_name: family_name || null,
+    }
+    const newUser = await Users.add(userData)
     const userInfo = { newUser }
+
     res.status(201).json({ userInfo })
   }
 })
