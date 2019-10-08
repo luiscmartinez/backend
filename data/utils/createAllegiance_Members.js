@@ -1,4 +1,4 @@
-function createTeam_Members(tbl) {
+function createAllegiance_Members(tbl) {
   tbl.increments()
 
   tbl
@@ -11,14 +11,14 @@ function createTeam_Members(tbl) {
     .onUpdate('CASCADE')
 
   tbl
-    .integer('team_id')
+    .integer('allegiance_id')
     .unsigned()
     .notNullable()
     .references('id')
-    .inTable('teams')
+    .inTable('allegiances')
     .onDelete('CASCADE')
     .onUpdate('CASCADE')
 
-  tbl.unique(['user_id', 'team_id'])
+  tbl.unique(['user_id', 'allegiance_id'])
 }
-module.exports = createTeam_Members
+module.exports = createAllegiance_Members
