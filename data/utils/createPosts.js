@@ -3,7 +3,6 @@ function createPosts(tbl) {
   tbl.string('title').notNullable()
 
   tbl.text('content').notNullable()
-  tbl.string('image')
   tbl
     .integer('group_id')
     .unsigned()

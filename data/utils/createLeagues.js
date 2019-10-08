@@ -9,6 +9,7 @@ function createLeagues(tbl) {
     .inTable('sports')
     .onDelete('CASCADE')
     .onUpdate('CASCADE')
+  tbl.string('acronym')
   tbl.timestamps(true, true)
 }
 module.exports = createLeagues

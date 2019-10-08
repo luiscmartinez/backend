@@ -1,4 +1,4 @@
-function createLikes(tbl) {
+function createImages(tbl) {
   tbl.increments()
   tbl.string('entity_type')
   tbl.integer('entity_id')
@@ -13,4 +13,4 @@ function createLikes(tbl) {
   tbl.timestamps(true, true)
 }
 
-module.exports = createLikes
+module.exports = createImages

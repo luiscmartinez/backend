@@ -8,7 +8,7 @@ function createGroup_Members(tbl) {
     .inTable('users')
     .onDelete('CASCADE')
     .onUpdate('CASCADE')
-  tbl.boolean('co_admin').defaultTo(false)
+  tbl.boolean('user_type')
   tbl
     .integer('group_id')
     .unsigned()

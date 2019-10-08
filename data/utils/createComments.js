@@ -1,7 +1,6 @@
 function createComments(tbl) {
   tbl.increments()
   tbl.text('content').notNullable()
-  tbl.string('image')
   tbl
     .integer('post_id')
     .unsigned()

@@ -12,11 +12,13 @@ exports.up = function(knex) {
     createTableIfNotExist(knex, helpers.createAllegiance_Members),
     createTableIfNotExist(knex, helpers.createComments),
     createTableIfNotExist(knex, helpers.createEvents),
+    createTableIfNotExist(knex, helpers.createImages),
   ])
 }
 
 exports.down = function(knex) {
   return Promise.all([
+    knex.schema.dropTableIfExists('images'),
     knex.schema.dropTableIfExists('events'),
     knex.schema.dropTableIfExists('comments'),
     knex.schema.dropTableIfExists('allegiance_members'),

@@ -9,4 +9,5 @@ module.exports = {
   createAllegiance_Members: require('./createAllegiance_Members'),
   createComments: require('./createComments'),
   createEvents: require('./createEvents'),
+  createImages: require('./createImages'),
 }
