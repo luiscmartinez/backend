@@ -1,4 +1,4 @@
-function createAllegiances(tbl) {
+function createTeams(tbl) {
   tbl.increments()
   tbl.string('name').notNullable()
   tbl.string('image')
@@ -14,4 +14,4 @@ function createAllegiances(tbl) {
   tbl.timestamps(true, true)
 }
 
-module.exports = createAllegiances
+module.exports = createTeams

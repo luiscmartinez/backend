@@ -10,11 +10,11 @@ function createGroups(tbl) {
   tbl.string('acronym', 4)
   tbl.string('description')
   tbl
-    .integer('allegiance_id')
+    .integer('team_id')
     .unsigned()
     .notNullable()
     .references('id')
-    .inTable('allegiances')
+    .inTable('teams')
     .onDelete('CASCADE')
     .onUpdate('CASCADE')
   tbl
